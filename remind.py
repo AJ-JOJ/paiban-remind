@@ -6,7 +6,7 @@ import requests
 SENDKEY = "SCT418553TV2BUZTVt5srYAWnEmaSvxdbP"
 # ==========================================================
 
-df = pd.read_excel("banbiao.xlsx")
+df = pd.read_excel("banbiao.xlsx", engine="openpyxl")
 df["date"] = pd.to_datetime(df["date"])
 
 today = datetime.date.today()
