@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: install lib
-        run: pip install pandas openpyxl requests
+        run: pip install pandas requests
       - name: run script
         run: python remind.py
