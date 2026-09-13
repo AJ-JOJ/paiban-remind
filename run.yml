@@ -6,6 +6,7 @@ on:
     - cron: "0 14 * * *"
     # 国内14点（下午2点，大夜班二次提醒） UTC6点
     - cron: "0 6 * * *"
+  workflow_dispatch:   # ←新增！！这一行！！允许网页手动点按钮测试！！
 jobs:
   run:
     runs-on: ubuntu-latest
