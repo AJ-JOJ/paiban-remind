@@ -1,0 +1,18 @@
+name: Banbiao Remind
+on:
+  schedule:
+    # UTC世界时间，国内=UTC+8
+    # 国内22点（晚上10点推送明天班次） UTC14点
+    - cron: "0 14 * * *"
+    # 国内14点（下午2点，大夜班二次提醒） UTC6点
+    - cron: "0 6 * * *"
+  workflow_dispatch:   # ←新增！！这一行！！允许网页手动点按钮测试！！
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install lib
+        run: pip install pandas openpyxl requests
+      - name: run script
+        run: python remind.py
